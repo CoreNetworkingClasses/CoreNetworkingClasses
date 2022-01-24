@@ -1,0 +1,15 @@
+What is #Traceroute & How it Works?
+#TRACEROUTE
+o  Traceroute is a network diagnostic tool, that is used to identify number of hops in between Source and destination, and is also used to find the average time taken by a ip packet for each hop.
+o  Source Device send a packet starting with TTL 1 and once TTL expire on every device it increase the TTL until it gets reply from destination.
+o  Every router in between Source and destination use ICMP packet to reply It use destination port no from 33434 to 33464 (basically these ports are unused)
+o  it will work only for 30 hops (give info only for 30 devices away form source)
+o  Every single packet use different UDP port no from 33434 to 33464.
+o  it send 3 packet for each hop by-default(Traceroute program sends three packets to each hop to measure the exact average round trip time)
+o  First packet will goes with TTL 1 and when next hop receive that packet it will decrement TTL value by 1 and if it get zero then it will send TTL exceeds msg to pc.And Source will get to know first router in that way.
+o  Then again Source will send packet with TTL 2 and when 2nd router in that way get that packet then it will send  TTL exceeds msg to Source Device and again Source Device will get to know another router in that way and process will continue until packet goes to correct destination.
+o  when packet reaches its exact destination it will send a port unreachable msg to Source Device, and trace route process will complete.
+
+CNC | Core Networking Classes
+
+#networksecurity #Routing #Switching #SDWAN #ENARSI #CCIE #CCNA #CCNP #Trace #Troubleshooting #Networking
